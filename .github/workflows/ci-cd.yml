@@ -27,15 +27,15 @@ jobs:
 
       - name: Build Docker Image for Backend
         run: |
-          docker build -t codeandverse-backend ./  # Dockerfile path
+          docker build -t codeandverse-backend:2 ./  # Dockerfile path
 
       - name: Tag Docker Image for ECR
         run: |
-          docker tag codeandverse-backend:latest 767398107655.dkr.ecr.us-east-1.amazonaws.com/codeandversebackend:latest
+          docker tag codeandverse-backend:2 767398107655.dkr.ecr.us-east-1.amazonaws.com/codeandversebackend:2
 
       - name: Push Docker Image to ECR
         run: |
-          docker push 767398107655.dkr.ecr.us-east-1.amazonaws.com/codeandversebackend:latest
+          docker push 767398107655.dkr.ecr.us-east-1.amazonaws.com/codeandversebackend:2
 
       - name: Deploy to ECS
         run: |

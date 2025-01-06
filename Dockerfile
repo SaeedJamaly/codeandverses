@@ -10,6 +10,9 @@ COPY package*.json ./
 # Step 4: Install dependencies
 RUN npm install
 
+# Generate Prisma Client
+RUN npx prisma generate
+
 # Install TypeScript globally so tsc can run
 RUN npm install -g typescript
 
