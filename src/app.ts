@@ -25,9 +25,11 @@ import { initializeSocket } from './socket/socket';
 // Create an HTTP server
 const server = http.createServer(app);
 
+const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:3000';
+
 // Middleware
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: frontendUrl,
     credentials: true
 }));
 app.use(express.json());
@@ -38,7 +40,7 @@ app.use(session({
     saveUninitialized: false,
     cookie: {
         httpOnly: true,
-        secure: process.env.NODE_ENV === 'production', // Set to true if using HTTPS in production
+        secure: process.env.NODE_ENV === 'production',
       }
 }));
 
