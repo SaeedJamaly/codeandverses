@@ -14,7 +14,7 @@ RUN npm install
 COPY src/prisma ./src/prisma
 
 # Generate Prisma Client
-RUN npx prisma generate
+RUN npx prisma generate --schema=./src/prisma/schema.prisma
 
 # Step 7: Copy the rest of your backend source code to the container
 COPY . .
