@@ -10,6 +10,12 @@ COPY package*.json ./
 # Step 4: Install dependencies
 RUN npm install
 
+# Install TypeScript globally so tsc can run
+RUN npm install -g typescript
+
+# Ensure correct permissions on TypeScript binaries (just in case)
+RUN chmod +x ./node_modules/.bin/tsc
+
 # Step 5: Copy the rest of your backend source code to the container
 COPY . .
 
