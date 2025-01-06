@@ -1,5 +1,4 @@
 import { Request, Response, NextFunction } from 'express';
-import { saveContact } from '../models/contact';
 import { PrismaClient } from '@prisma/client';
 import db from '../config/db';
 import { sendEmail } from '../services/emailService';
