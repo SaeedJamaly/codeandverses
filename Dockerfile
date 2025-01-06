@@ -11,7 +11,7 @@ COPY package*.json ./
 RUN npm install
 
 # Step 6: Copy the Prisma schema
-COPY prisma ./prisma
+COPY prisma ./src/prisma
 
 # Generate Prisma Client
 RUN npx prisma generate
