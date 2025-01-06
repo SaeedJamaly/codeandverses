@@ -1,6 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
 import { PrismaClient } from '@prisma/client';
-import db from '../config/db';
 import { sendEmail } from '../services/emailService';
 import dotenv from 'dotenv';
 
