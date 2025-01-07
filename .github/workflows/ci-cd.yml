@@ -27,7 +27,7 @@ jobs:
 
       - name: Build Docker Image for Backend
         run: |
-          docker build -t codeandverse-backend:2 ./  # Dockerfile path
+          docker build --no-cache -t codeandverse-backend:2 ./  # Dockerfile path
 
       - name: Tag Docker Image for ECR
         run: |
